@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 import Relogio from './componentes/Relogio'
+import Led from './componentes/Led'
 
 export default function App() {
-  const [num,setNum]=useState(10)
+  const [num, setNum] = useState(10)
+  const [ligado, setLigado] = useState(false)
   return (
     <>
       <section className='caixa'>
@@ -15,7 +15,9 @@ export default function App() {
         <a href='#' target='_blank'>Testando customização css</a>
         <br></br>
         <p>Valor do state num: {num}</p>
-        <button onClick={()=>setNum(100)}>Soma 10</button>
+        <button onClick={() => setNum(100)}>Soma 10</button>
+        <br></br>
+        <Led ligado={ligado} setLigado={setLigado}></Led>
       </section>
     </>
   );
